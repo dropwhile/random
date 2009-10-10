@@ -8,66 +8,6 @@
     <link rel="shortcut icon" href="{Favicon}" />
     <link rel="alternate" type="application/rss+xml" href="{RSS}" />
 
-    <meta name="color:Background" content="#FFF" />
-    <meta name="color:Body Text" content="#333" />
-    <meta name="color:Title" content="#333" />
-    <meta name="color:Entry Title" content="#000" />
-    <meta name="color:Tag Page Title" content="#CCC" />
-    <meta name="color:Tag Link Color" content="#829FAE" />
-    <meta name="color:Permalink" content="#AAA" />
-    <meta name="color:Entry Border" content="#CCC" />
-    <meta name="color:Entry Link" content="#5D707A" />
-    <meta name="color:Entry Link Hover" content="#0F98E0" />
-    <meta name="color:Sidebar Link" content="#5D707A" />
-    <meta name="color:Photo Border" content="#000" />
-
-    <meta name="color:Conversation Text" content="#333" />
-    <meta name="color:Conversation Border" content="#CCC" />
-    <meta name="color:Conversation Odd" content="#EEE" />
-    <meta name="color:Conversation Even" content="#DDD" />
-
-    <meta name="color:Quote Text" content="#000" />
-    <meta name="color:Quote Left Border" content="#000" />
-    <meta name="color:Caption Text" content="#777" />
-
-    <meta name="color:Photo Icon Background" content="#CCC" />
-    <meta name="color:Photo Icon Color" content="#666" />
-    <meta name="color:Photo Date Background" content="#EEE" />
-    <meta name="color:Photo Date Color" content="#666" />
-
-    <meta name="color:Video Icon Background" content="#333" />
-    <meta name="color:Video Icon Color" content="#FFF" />
-    <meta name="color:Video Date Background" content="#555" />
-    <meta name="color:Video Date Color" content="#FFF" />
-
-    <meta name="color:Text Icon Background" content="#000" />
-    <meta name="color:Text Icon Color" content="#FFF" />
-    <meta name="color:Text Date Background" content="#333" />
-    <meta name="color:Text Date Color" content="#FFF" />
-
-    <meta name="color:Quote Icon Background" content="#555" />
-    <meta name="color:Quote Icon Color" content="#FFF" />
-    <meta name="color:Quote Date Background" content="#777" />
-    <meta name="color:Quote Date Color" content="#FFF" />
-
-    <meta name="color:Link Icon Background" content="#BBB" />
-    <meta name="color:Link Icon Color" content="#666" />
-    <meta name="color:Link Date Background" content="#DDD" />
-    <meta name="color:Link Date Color" content="#666" />
-
-    <meta name="color:Audio Icon Background" content="#AAA" />
-    <meta name="color:Audio Icon Color" content="#666" />
-    <meta name="color:Audio Date Background" content="#CCC" />
-    <meta name="color:Audio Date Color" content="#666" />
-
-    <meta name="color:Chat Icon Background" content="#222" />
-    <meta name="color:Chat Icon Color" content="#FFF" />
-    <meta name="color:Chat Date Background" content="#555" />
-    <meta name="color:Chat Date Color" content="#FFF" />
-
-    <meta name="color:Footer Border" content="#CCC" />
-    <meta name="color:Footer Link" content="#5D707A" />
-
     <style type="text/css">
         /*
             Wakalixes Theme by Andrea Mignolo v1.0
@@ -80,11 +20,32 @@
             font-family: Georgia, Times, serif;
             font-size: 14px;
             line-height: 18px;
-            background: {color:Background};
-            color: {color:Body Text};
+            background: #FFF;
+            color: #333;
         }
 
         a, a:link, a:visited { outline: none; }
+
+        h1 { font-size: 18px; }
+
+        h1 a {
+            color: #333;
+            text-decoration: none;
+        }
+
+        h2 {
+            font-size: 14px;
+            margin: 0 0 15px 0;
+            padding: 0;
+            color: #000;
+        }
+
+        h3 {
+            font-size: 12px;
+            font-weight: normal;
+            color: #CCC;
+            text-transform: uppercase;
+        }
 
         .meta {
             width: 150px;
@@ -98,13 +59,6 @@
             margin-top: 0;
             padding-top: 5px;
         }
-
-        .icon {
-            padding: 5px;
-            font-weight: bold;
-        }
-
-        .date { padding: 5px; }
 
         #wrapper {
             width: 800px;
@@ -129,7 +83,7 @@
             overflow: hidden;
             clear: both;
             padding-top: 20px;
-            border-top: 1px solid {color:Entry Border};
+            border-top: 1px solid #CCC;
         }
 
         .entry {
@@ -146,7 +100,7 @@
             font-style: italic;
             font-size: 18px;
             line-height: 120%;
-            color: {color:Quote Text};
+            color: #000;
         }
 
         #footer {
@@ -155,8 +109,8 @@
         }
 
         #footer ul {
-            border-top: 1px solid {color:Footer Border};
-            border-bottom: 1px solid {color:Footer Border};
+            border-top: 1px solid #CCC;
+            border-bottom: 1px solid #CCC;
             list-style-type: none;
             height: 36px;
             line-height: 24px;
@@ -171,140 +125,61 @@
         #footer li a {
             display: block;
             padding: 5px 40px 10px 0;
-            color: {color:Footer Link};
+            color: #5D707A;
             /* font-variant: small-caps; */
             text-decoration: none;
         }
 
-
-        h1 { font-size: 18px; }
-
-        h1 a {
-            color: {color:Title};
-            text-decoration: none;
-        }
-
-        h2 {
-            font-size: 14px;
-            margin: 0 0 15px 0;
-            padding: 0;
-            color: {color:Entry Title};
-        }
-
-        h3 {
-            font-size: 12px;
-            font-weight: normal;
-            color: {color:Tag Page Title};
-            text-transform: uppercase;
-        }
-
         .meta a, .themeinfo a {
-            color: {color:Permalink};
+            color: #AAA;
             text-decoration: none;
         }
 
-        .entry a { color: {color:Entry Link}; }
+        .entry a { color: #5D707A; }
 
-        .entry a:hover { color: {color:Entry Link Hover}; }
+        .entry a:hover { color: #0F98E0; }
 
-        #sidebar a { color: {color:Sidebar Link}; }
+        #sidebar a { color: #5D707A; }
 
-        .photo .icon {
-            background: {color:Photo Icon Background};
-            color: {color:Photo Icon Color};
+        .icon {
+            padding: 5px;
+            font-weight: bold;
+            background: #555;
+            color: #FFF;
         }
 
-        .photo .date {
-            background: {color:Photo Date Background};
-            color: {color:Photo Date Color};
+        .date {
+            padding: 5px;
+            background: #777;
+            color: #FFF;
         }
 
-        .video .icon {
-            background: {color:Video Icon Background};
-            color: {color:Video Icon Color};
-        }
-
-        .video .date {
-            background: {color:Video Date Background};
-            color: {color:Video Date Color};
-        }
-
-        .text .icon {
-            background: {color:Text Icon Background};
-            color: {color:Text Icon Color};
-        }
-
-        .text .date {
-            background: {color:Text Date Background};
-            color: {color:Text Date Color};
-        }
-
-        .quote .icon {
-            background: {color:Quote Icon Background};
-            color: {color:Quote Icon Color};
-        }
-
-        .quote .date {
-            background: {color:Quote Date Background};
-            color: {color:Quote Date Color};
-        }
-
-        .link .icon {
-            background: {color:Link Icon Background};
-            color: {color:Link Icon Color};
-        }
-
-        .link .date {
-            background: {color:Link Date Background};
-            color: {color:Link Date Color};
-        }
-
-        .audio .icon {
-            background: {color:Audio Icon Background};
-            color: {color:Audio Icon Color};
-        }
-
-        .audio .date {
-            background: {color:Audio Date Background};
-            color: {color:Audio Date Color};
-        }
-
-        .chat .icon {
-            background: {color:Chat Icon Background};
-            color: {color:Chat Icon Color};
-        }
-
-        .chat .date {
-            background: {color:Chat Date Background};
-            color: {color:Chat Date Color};
-        }
-
-        .photo img { border: 1px solid {color:Photo Border}; }
+        .photo img { border: 1px solid #000; }
 
         .chat ul {
             list-style-type: none;
-            color: {color:Conversation Text};
+            color: #333;
             padding: 0;
             margin: 0 0 15px 0;
-            border: 1px dotted {color:Conversation Border};
+            border: 1px dotted #CCC;
         }
 
         .chat .odd {
-            background: {color:Conversation Odd};
+            background: #EEE;
             padding: 5px 5px 5px 15px;
         }
 
         .chat .even {
-            background: {color:Conversation Even};
+            background: #DDD;
             padding: 5px 5px 5px 15px;
         }
 
-        p.caption {
+        div.caption {
             margin: 5px 0 15px 10px;
             padding: 0;
             font-size: 11px;
             line-height: 14px;
-            color: {color:Caption Text};
+            color: #777;
         }
 
         .tags ul {
@@ -323,7 +198,7 @@
 
         .tags li a {
             padding: 5px;
-            color: {color:Tag Link Color};
+            color: #829FAE;
             text-decoration: none;
         }
 
@@ -337,6 +212,8 @@
             -moz-opacity: 0.5;
             opacity: 0.5;
         }
+
+        .query{ font-weight:bold; }
 
         code{
             background:#eff5e3;
@@ -352,8 +229,6 @@
             padding: 4px;
         }
 
-        .query{ font-weight:bold; }
-
         blockquote{
             border-left:.5em solid lightgrey;
             padding-left:1em;
@@ -362,6 +237,7 @@
         }
 
         blockquote.said{ margin-left:0; }
+        fieldset{ border:0;padding:0;margin:0; }
 
         {CustomCSS}
     </style>
@@ -397,7 +273,7 @@
                 <div class="entry">
                     {LinkOpenTag}<img src="{PhotoURL-400}" alt="{PhotoAlt}" />{LinkCloseTag}
                     {block:Caption}
-                    <p class="caption">{Caption}</p>
+                    <div class="caption">{Caption}</div>
                     {/block:Caption}
             {/block:Photo}
 
@@ -456,7 +332,7 @@
                     <div class="embed">{Video-400}</div>
 
                     {block:Caption}
-                    <p class="caption">{Caption}</p>
+                    <div class="caption">{Caption}</div>
                     {/block:Caption}
             {/block:Video}
 
@@ -475,7 +351,7 @@
                     </span>
 
                     {block:Caption}
-                    <p class="caption">{Caption}</p>
+                    <div class="caption">{Caption}</div>
                     {/block:Caption}
             {/block:Audio}
 
@@ -505,10 +381,12 @@
             <br /><br />
             <div id="search">
                 <form action="/search" method="get">
-                    <input type="text" name="q" value="{SearchQuery}"/>
-                    <input type="submit" value="Search"/>
+                    <fieldset>
+                    <input type="text" name="q" value="{SearchQuery}" />
+                    <input type="submit" value="Search" />
+                    </fieldset>
                 </form>
-            </div>
+             </div>
 
             {block:TagPage}
                 <h3>Posts tagged "{Tag}"</h3>
