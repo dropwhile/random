@@ -7,7 +7,7 @@
     <title>{Title}</title>
     <link rel="shortcut icon" href="{Favicon}" />
     <link rel="alternate" type="application/rss+xml" href="{RSS}" />
-    
+
     <meta name="color:Background" content="#FFF" />
     <meta name="color:Body Text" content="#333" />
     <meta name="color:Title" content="#333" />
@@ -20,51 +20,51 @@
     <meta name="color:Entry Link Hover" content="#0F98E0" />
     <meta name="color:Sidebar Link" content="#5D707A" />
     <meta name="color:Photo Border" content="#000" />
-    
+
     <meta name="color:Conversation Text" content="#333" />
     <meta name="color:Conversation Border" content="#CCC" />
     <meta name="color:Conversation Odd" content="#EEE" />
     <meta name="color:Conversation Even" content="#DDD" />
-    
+
     <meta name="color:Quote Text" content="#000" />
     <meta name="color:Quote Left Border" content="#000" />
     <meta name="color:Caption Text" content="#777" />
-    
+
     <meta name="color:Photo Icon Background" content="#CCC" />
     <meta name="color:Photo Icon Color" content="#666" />
     <meta name="color:Photo Date Background" content="#EEE" />
     <meta name="color:Photo Date Color" content="#666" />
-    
+
     <meta name="color:Video Icon Background" content="#333" />
     <meta name="color:Video Icon Color" content="#FFF" />
     <meta name="color:Video Date Background" content="#555" />
     <meta name="color:Video Date Color" content="#FFF" />
-    
+
     <meta name="color:Text Icon Background" content="#000" />
     <meta name="color:Text Icon Color" content="#FFF" />
     <meta name="color:Text Date Background" content="#333" />
     <meta name="color:Text Date Color" content="#FFF" />
-    
+
     <meta name="color:Quote Icon Background" content="#555" />
     <meta name="color:Quote Icon Color" content="#FFF" />
     <meta name="color:Quote Date Background" content="#777" />
     <meta name="color:Quote Date Color" content="#FFF" />
-    
+
     <meta name="color:Link Icon Background" content="#BBB" />
     <meta name="color:Link Icon Color" content="#666" />
     <meta name="color:Link Date Background" content="#DDD" />
     <meta name="color:Link Date Color" content="#666" />
-    
+
     <meta name="color:Audio Icon Background" content="#AAA" />
     <meta name="color:Audio Icon Color" content="#666" />
     <meta name="color:Audio Date Background" content="#CCC" />
     <meta name="color:Audio Date Color" content="#666" />
-    
+
     <meta name="color:Chat Icon Background" content="#222" />
     <meta name="color:Chat Icon Color" content="#FFF" />
     <meta name="color:Chat Date Background" content="#555" />
     <meta name="color:Chat Date Color" content="#FFF" />
-    
+
     <meta name="color:Footer Border" content="#CCC" />
     <meta name="color:Footer Link" content="#5D707A" />
 
@@ -74,7 +74,8 @@
             Released under Creative Commons Attribution-Noncommercial-Share Alike 3.0 Unported License
             http://creativecommons.org/licenses/by-nc-sa/3.0/
         */
-        
+
+
         body {
             font-family: Georgia, Times, serif;
             font-size: 14px;
@@ -82,9 +83,9 @@
             background: {color:Background};
             color: {color:Body Text};
         }
-        
+
         a, a:link, a:visited { outline: none; }
-        
+
         .meta {
             width: 150px;
             font-size: 11px;
@@ -92,37 +93,37 @@
             display: inline;
             margin-top: 2px;
         }
-        
+
         .meta p {
             margin-top: 0;
             padding-top: 5px;
         }
-        
+
         .icon {
             padding: 5px;
             font-weight: bold;
         }
-        
+
         .date { padding: 5px; }
-        
+
         #wrapper {
             width: 800px;
             margin: 0 auto;
         }
-        
+
         #posts {
             float: left;
             display: inline;
             width: 570px;
         }
-        
+
         #sidebar {
             width: 150px;
             float: right;
             margin-top: 140px;
             margin-bottom: 140px;
         }
-        
+
         .text, .photo, .quote, .link, .chat, .video, .audio, .footer {
             width: 100%;
             overflow: hidden;
@@ -130,7 +131,7 @@
             padding-top: 20px;
             border-top: 1px solid {color:Entry Border};
         }
-        
+
         .entry {
             width: 415px;
             float: right;
@@ -138,7 +139,7 @@
             min-height: 60px;
             padding-bottom: 15px;
         }
-        
+
         .said { margin-top:0;padding-top:0; }
 
         p.said {
@@ -147,12 +148,12 @@
             line-height: 120%;
             color: {color:Quote Text};
         }
-        
+
         #footer {
             clear: both;
             overflow: hidden;
         }
-        
+
         #footer ul {
             border-top: 1px solid {color:Footer Border};
             border-bottom: 1px solid {color:Footer Border};
@@ -160,13 +161,13 @@
             height: 36px;
             line-height: 24px;
         }
-        
+
         #footer ul li {
             height: 24px;
             line-height: 24px;
             float: left;
         }
-        
+
         #footer li a {
             display: block;
             padding: 5px 40px 10px 0;
@@ -174,112 +175,112 @@
             /* font-variant: small-caps; */
             text-decoration: none;
         }
-    
-    
+
+
         h1 { font-size: 18px; }
-        
+
         h1 a {
             color: {color:Title};
             text-decoration: none;
         }
-        
+
         h2 {
             font-size: 14px;
             margin: 0 0 15px 0;
             padding: 0;
             color: {color:Entry Title};
         }
-        
+
         h3 {
             font-size: 12px;
             font-weight: normal;
             color: {color:Tag Page Title};
             text-transform: uppercase;
         }
-        
+
         .meta a, .themeinfo a {
             color: {color:Permalink};
             text-decoration: none;
         }
-        
+
         .entry a { color: {color:Entry Link}; }
-        
+
         .entry a:hover { color: {color:Entry Link Hover}; }
-        
+
         #sidebar a { color: {color:Sidebar Link}; }
-        
+
         .photo .icon {
             background: {color:Photo Icon Background};
             color: {color:Photo Icon Color};
         }
-        
+
         .photo .date {
             background: {color:Photo Date Background};
             color: {color:Photo Date Color};
         }
-        
+
         .video .icon {
             background: {color:Video Icon Background};
             color: {color:Video Icon Color};
         }
-        
+
         .video .date {
             background: {color:Video Date Background};
             color: {color:Video Date Color};
         }
-        
+
         .text .icon {
             background: {color:Text Icon Background};
             color: {color:Text Icon Color};
         }
-        
+
         .text .date {
             background: {color:Text Date Background};
             color: {color:Text Date Color};
         }
-        
+
         .quote .icon {
             background: {color:Quote Icon Background};
             color: {color:Quote Icon Color};
         }
-        
+
         .quote .date {
             background: {color:Quote Date Background};
             color: {color:Quote Date Color};
         }
-        
+
         .link .icon {
             background: {color:Link Icon Background};
             color: {color:Link Icon Color};
         }
-        
+
         .link .date {
             background: {color:Link Date Background};
             color: {color:Link Date Color};
         }
-        
+
         .audio .icon {
             background: {color:Audio Icon Background};
             color: {color:Audio Icon Color};
         }
-        
+
         .audio .date {
             background: {color:Audio Date Background};
             color: {color:Audio Date Color};
         }
-        
+
         .chat .icon {
             background: {color:Chat Icon Background};
             color: {color:Chat Icon Color};
         }
-        
+
         .chat .date {
             background: {color:Chat Date Background};
             color: {color:Chat Date Color};
         }
-        
+
         .photo img { border: 1px solid {color:Photo Border}; }
-        
+
         .chat ul {
             list-style-type: none;
             color: {color:Conversation Text};
@@ -287,17 +288,17 @@
             margin: 0 0 15px 0;
             border: 1px dotted {color:Conversation Border};
         }
-        
+
         .chat .odd {
             background: {color:Conversation Odd};
             padding: 5px 5px 5px 15px;
         }
-        
+
         .chat .even {
             background: {color:Conversation Even};
             padding: 5px 5px 5px 15px;
         }
-                
+
         p.caption {
             margin: 5px 0 15px 10px;
             padding: 0;
@@ -305,7 +306,7 @@
             line-height: 14px;
             color: {color:Caption Text};
         }
-    
+
         .tags ul {
             list-style-type: none;
             padding-left: 0;
@@ -313,19 +314,19 @@
             border: 0;
 
         }
-        
+
         .tags li {
             font-variant: small-caps;
             font-size: 12px;
             float: left;
         }
-        
+
         .tags li a {
             padding: 5px;
             color: {color:Tag Link Color};
             text-decoration: none;
         }
-        
+
         .themeinfo {
             text-align: right;
             font-size: 11px;
@@ -376,7 +377,7 @@
 
             {block:Posts}
             {block:Text}
-            <div class="text">  
+            <div class="text">
                 <div class="meta">
                     <a href="{Permalink}"><span class="icon">¶</span><span class="date">{DayOfMonth} {Month}, {Year}</span></a>
                 </div>
@@ -385,22 +386,9 @@
                     {block:Title}
                     <h2>{Title}</h2>
                     {/block:Title}
-                
                     {Body}
-                    <div class="tags">
-                        {block:HasTags}
-                            <ul>
-                            <li>Tagged:</li>
-                            {block:Tags}
-                            <li><a href="{TagURL}">{Tag}</a></li>
-                            {/block:Tags}
-                            </ul>
-                        {/block:HasTags}
-                    </div>
-                </div>
-            </div>
             {/block:Text}
-        
+
             {block:Photo}
             <div class="photo">
                 <div class="meta">
@@ -411,21 +399,8 @@
                     {block:Caption}
                     <p class="caption">{Caption}</p>
                     {/block:Caption}
-                    
-                    <div class="tags">
-                        {block:HasTags}
-                            <ul>
-                            <li>Tagged:</li>
-                            {block:Tags}
-                            <li><a href="{TagURL}">{Tag}</a></li>
-                            {/block:Tags}
-                            </ul>
-                        {/block:HasTags}
-                    </div>
-                </div>
-            </div>
             {/block:Photo}
-        
+
             {block:Quote}
             <div class="quote">
                 <div class="meta">
@@ -437,21 +412,8 @@
                         <p class="source">&mdash; {Source}</p>
                         {/block:Source}
                     </blockquote>
-                    
-                    <div class="tags">
-                        {block:HasTags}
-                            <ul>
-                            <li>Tagged:</li>
-                            {block:Tags}
-                            <li><a href="{TagURL}">{Tag}</a></li>
-                            {/block:Tags}
-                            </ul>
-                        {/block:HasTags}
-                    </div>
-                </div>
-            </div>
             {/block:Quote}
-        
+
             {block:Link}
             <div class="link">
                 <div class="meta">
@@ -462,20 +424,8 @@
                     {block:Description}
                     <p class="description">{Description}</p>
                     {/block:Description}
-                    <div class="tags">
-                        {block:HasTags}
-                            <ul>
-                            <li>Tagged:</li>
-                            {block:Tags}
-                            <li><a href="{TagURL}">{Tag}</a></li>
-                            {/block:Tags}
-                            </ul>
-                        {/block:HasTags}
-                    </div>
-                </div>
-            </div>
             {/block:Link}
-        
+
             {block:Chat}
             <div class="chat">
                 <div class="meta">
@@ -485,31 +435,18 @@
                     {block:Title}
                     <h2>{Title}</h2>
                     {/block:Title}
-                        <ul>
-                            {block:Lines}
-                                <li class="{Alt} user_{UserNumber}">
-                                {block:Label}
-                                    <span class="label">{Label}</span>
-                                {/block:Label}
-                                {Line}
-                                 </li>
-                             {/block:Lines}
-                        </ul>
-                        
-                        <div class="tags">
-                            {block:HasTags}
-                                <ul>
-                                <li>Tagged:</li>
-                                {block:Tags}
-                                <li><a href="{TagURL}">{Tag}</a></li>
-                                {/block:Tags}
-                                </ul>
-                            {/block:HasTags}
-                        </div>
-                </div>
-            </div>
+                    <ul>
+                    {block:Lines}
+                        <li class="{Alt} user_{UserNumber}">
+                        {block:Label}
+                            <span class="label">{Label}</span>
+                        {/block:Label}
+                        {Line}
+                        </li>
+                    {/block:Lines}
+                    </ul>
             {/block:Chat}
-        
+
             {block:Video}
             <div class="video">
                 <div class="meta">
@@ -517,25 +454,12 @@
                 </div>
                 <div class="entry">
                     <div class="embed">{Video-400}</div>
-                    
+
                     {block:Caption}
                     <p class="caption">{Caption}</p>
                     {/block:Caption}
-                    
-                    <div class="tags">
-                        {block:HasTags}
-                            <ul>
-                            <li>Tagged:</li>
-                            {block:Tags}
-                            <li><a href="{TagURL}">{Tag}</a></li>
-                            {/block:Tags}
-                            </ul>
-                        {/block:HasTags}
-                    </div>
-                </div>
-            </div>
             {/block:Video}
-        
+
             {block:Audio}
             <div class="audio">
                 <div class="meta">
@@ -543,39 +467,38 @@
                 </div>
                 <div class="entry">
                     {AudioPlayerBlack}
-                    
+
                     <span class="external_audio">
                     {block:ExternalAudio}
                         {ExternalAudioURL}
                     {/block:ExternalAudio}
                     </span>
-                    
+
                     {block:Caption}
                     <p class="caption">{Caption}</p>
                     {/block:Caption}
-                    
+            {/block:Audio}
+
+            {block:HasTags}
                     <div class="tags">
-                        {block:HasTags}
-                            <ul>
-                            <li>Tagged:</li>
-                            {block:Tags}
-                            <li><a href="{TagURL}">{Tag}</a></li>
-                            {/block:Tags}
-                            </ul>
-                        {/block:HasTags}
+                        <ul>
+                        <li>Tagged:</li>
+                        {block:Tags}
+                        <li><a href="{TagURL}">{Tag}</a></li>
+                        {/block:Tags}
+                         </ul>
                     </div>
+            {/block:HasTags}
                 </div>
             </div>
-            {/block:Audio}
-            {PostNotes}
             {/block:Posts}
         </div> <!-- close #posts -->
-        
+
         <div id="sidebar">
             <h1><a href="/">{Title}</a></h1>
             {block:Description}
                 <p id="about">{Description}</p>
-                <a href="/archive">Archive</a> 
+                <a href="/archive">Archive</a>
                                 <span class="dim">/</span>
                 <a href="{RSS}">RSS</a>
             {/block:Description}
@@ -591,24 +514,24 @@
                 <h3>Posts tagged "{Tag}"</h3>
             {/block:TagPage}
         </div> <!-- close #sidebar -->
-        
+
         <div id="footer">
             {block:Pagination}
-                <ul>
-                    {block:NextPage}<li><a href="{NextPage}">&laquo; Further in the Past</a></li>{/block:NextPage}
-                    {block:PreviousPage}<li><a href="{PreviousPage}">Closer to Now &raquo;</a></li> {/block:PreviousPage} 
-                </ul>
+            <ul>
+                {block:NextPage}<li><a href="{NextPage}">&laquo; Further in the Past</a></li>{/block:NextPage}
+                {block:PreviousPage}<li><a href="{PreviousPage}">Closer to Now &raquo;</a></li> {/block:PreviousPage}
+            </ul>
             {/block:Pagination}
-            
+
             {block:PermalinkPagination}
-                <ul> 
-                    {block:PreviousPost}<li><a href="{PreviousPost}">&laquo; Further in the Past</a></li>{/block:PreviousPost}
-                    {block:NextPost}<li><a href="{NextPost}">Closer to Now &raquo;</a></li>{/block:NextPost}
-                </ul>
+            <ul>
+                {block:PreviousPost}<li><a href="{PreviousPost}">&laquo; Further in the Past</a></li>{/block:PreviousPost}
+                {block:NextPost}<li><a href="{NextPost}">Closer to Now &raquo;</a></li>{/block:NextPost}
+            </ul>
             {/block:PermalinkPagination}
 
             <p class="themeinfo"><a href="http://wakalixes.tumblr.com">Wakalixes makes it go!</a> Theme originally by <a href="http://andreamignolo.com">Mignolo</a>. Customized by  <a href="http://awesometrousers.net">AwesomeTrousers</a>. Powered by <a href="http://tumblr.com">Tumblr</a></p>
         </div> <!-- close #footer -->
 </div> <!-- close #wrapper -->
 </body>
-</html> 
+</html>
