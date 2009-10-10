@@ -108,9 +108,27 @@
             overflow: hidden;
         }
 
-        #footer a { color: #5D707A; }
+        #footer ul {
+            border-top: 1px solid #CCC;
+            border-bottom: 1px solid #CCC;
+            list-style-type: none;
+            height: 36px;
+            line-height: 24px;
+        }
 
-        #footer a:hover { color: #0F98E0; }
+        #footer ul li {
+            height: 24px;
+            line-height: 24px;
+            float: left;
+        }
+
+        #footer li a {
+            display: block;
+            padding: 5px 40px 10px 0;
+            color: #5D707A;
+            /* font-variant: small-caps; */
+            text-decoration: none;
+        }
 
         .meta a, .themeinfo a {
             color: #AAA;
@@ -122,8 +140,6 @@
         .entry a:hover { color: #0F98E0; }
 
         #sidebar a { color: #5D707A; }
-        #sidebar a:hover { color: #0F98E0; }
-        #sidebar h1 a:hover { color: #5D707A; }
 
         .icon {
             padding: 5px;
