@@ -15,7 +15,6 @@
             http://creativecommons.org/licenses/by-nc-sa/3.0/
         */
 
-
         body {
             font-family: Georgia, Times, serif;
             font-size: 14px;
@@ -78,6 +77,9 @@
             margin-bottom: 140px;
         }
 
+        #sidebar a:hover { color: #0F98E0; }
+        #sidebar h1 a:hover { color: #5D707A; }
+
         .text, .photo, .quote, .link, .chat, .video, .audio, .footer {
             width: 100%;
             overflow: hidden;
@@ -129,6 +131,8 @@
             /* font-variant: small-caps; */
             text-decoration: none;
         }
+
+        #footer li a:hover { color: #0F98E0; }
 
         .meta a, .themeinfo a {
             color: #AAA;
