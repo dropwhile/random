@@ -5,7 +5,7 @@ from optparse import OptionParser
 target_url = "http://aur.archlinux.org/rpc.php"
 
 class AppURLopener(urllib.FancyURLopener):
-    version = 'AURJSON-Example/1.0'
+    version = 'AURJSON-Example/1.0 python'
 
 urllib._urlopener = AppURLopener()
 
