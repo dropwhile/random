@@ -1,0 +1,47 @@
+<html><head>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
+<script type="text/javascript" charset="utf-8">
+var rpcurl = "http://aur.archlinux.org/rpc.php?callback=?";
+$(document).ready(function() {
+  $('#arg').focus();
+  $("#go").click(function() {
+    $("#response").html('');
+    $.getJSON(rpcurl, 
+      {"type": "search", "arg":$("#arg").val()},
+      function(data) {
+        var output = "<br>";
+        var dr = data['results'];
+        var dt = data['type'];
+        if (dr.length != null && dt == 'search') {
+          for (var i=0; i<dr.length; i++) {
+            output += 'Package: <br>\n';
+            for (var elem in dr[i]) {
+              output += ' - ' + elem + ': ' + dr[i][elem] + '<br>\n';
+            }
+            output += '<br>\n';
+          }
+        }   
+        else if (dt == 'error') {
+          output += 'Error: ' + dr;
+        }
+        else {
+          output += 'No Data!';
+        }
+        $("#response").html(output);
+      });
+    return false;
+  });
+});
+</script>
+</head>
+<body>
+<form>
+  <label for="qtype">Query Type: search</label>
+  <br><br>
+  <label for="arg">Args:</label>
+  <input id="arg" type="text" name="arg">
+  <br><br>
+  <input id="go" type="submit" name="action" value="Run Query">
+</form>
+<div id="response">&nbsp;</div>
+</body></html>
