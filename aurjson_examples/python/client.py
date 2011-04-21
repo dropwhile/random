@@ -4,6 +4,11 @@ import json, urllib
 from optparse import OptionParser
 target_url = "http://aur.archlinux.org/rpc.php"
 
+class AppURLopener(urllib.FancyURLopener):
+    version = 'AURJSON-Example/1.0'
+
+urllib._urlopener = AppURLopener()
+
 def search(args):
     params = urllib.urlencode({'type':'search', 'arg':args})
     response = urllib.urlopen("%s?%s" % (target_url,params)).read()
