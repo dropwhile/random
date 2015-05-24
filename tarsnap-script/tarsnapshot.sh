@@ -66,7 +66,7 @@ else
 fi
 
 printf "%s\n" "==> creating $BACKUP"
-$TARSNAP $EXTRA_FLAGS -c -f $BACKUP -T $TARSNAPFILES
+$TARSNAP $EXTRA_FLAGS -cvf $BACKUP -T $TARSNAPFILES
 
 EX=$?
 if [ $EX -ne 0 ]; then
