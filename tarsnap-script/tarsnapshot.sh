@@ -1,5 +1,15 @@
 #!/bin/sh
 
+if [ "$(id -u)" -ne 0 ]; then
+    printf "%s\n" "Please run as root"
+    exit
+fi
+
+if [ `whoami` != root ]; then
+    printf "%s" "Must be run as root. aborting."
+    exit 1
+fi
+
 # Tarsnap backup script
 # Original Written by Tim Bishop, 2009.
 #  http://www.bishnet.net/tim/tarsnap/run.sh
@@ -54,12 +64,12 @@ else
 	BACKUP="${HOSTNAME}-${YEAR}${MOY}${DOM}-${TIME}-daily"
 fi
 
-printf "%s" "==> creating $BACKUP"
+printf "%s\n" "==> creating $BACKUP"
 $TARSNAP $EXTRA_FLAGS -c -f $BACKUP -T $TARSNAPFILES
 
 EX=$?
 if [ $EX -ne 0 ]; then
-    printf "%s" "==> Error creating backup"
+    printf "%s\n" "==> Error creating backup"
     exit $EX
 fi
 
@@ -78,20 +88,20 @@ $TARSNAP --list-archives | grep -E "^${HOSTNAME}-" > $TMPFILE
 
 DELARCHIVES=""
 for i in $(grep -E "^${HOSTNAME}-[[:digit:]]{8}-[[:digit:]]{6}-daily$" $TMPFILE | sort -rn | tail -n +${DAILY}); do
-    printf "%s" "==> delete $i"
+    printf "%s\n" "==> delete $i"
     DELARCHIVES="$DELARCHIVES -f $i"
 done
 for i in $(grep -E "^${HOSTNAME}-[[:digit:]]{8}-[[:digit:]]{6}-weekly$" $TMPFILE | sort -rn | tail -n +${WEEKLY}); do
-    printf "%s" "==> delete $i"
+    printf "%s\n" "==> delete $i"
     DELARCHIVES="$DELARCHIVES -f $i"
 done
 for i in $(grep -E "^${HOSTNAME}-[[:digit:]]{8}-[[:digit:]]{6}-monthly$" $TMPFILE | sort -rn | tail -n +${MONTHLY}); do
-    printf "%s" "==> delete $i"
+    printf "%s\n" "==> delete $i"
     DELARCHIVES="$DELARCHIVES -f $i"
 done
 
 if [ X"$DELARCHIVES" != X ]; then
-	printf "%s" "==> delete $DELARCHIVES"
+	printf "%s\n" "==> delete $DELARCHIVES"
 	$TARSNAP -d $DELARCHIVES
 fi
 
