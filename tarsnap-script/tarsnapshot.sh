@@ -1,15 +1,5 @@
 #!/bin/sh
 
-if [ "$(id -u)" -ne 0 ]; then
-    printf "%s\n" "Please run as root"
-    exit
-fi
-
-if [ `whoami` != root ]; then
-    printf "%s" "Must be run as root. aborting."
-    exit 1
-fi
-
 # Tarsnap backup script
 # Original Written by Tim Bishop, 2009.
 #  http://www.bishnet.net/tim/tarsnap/run.sh
@@ -40,6 +30,17 @@ MONTHLY_DAY=01
 TARSNAP="/usr/local/bin/tarsnap"
 
 # end of config
+
+## check for root
+if [ "$(id -u)" -ne 0 ]; then
+    printf "%s\n" "Please run as root"
+    exit
+fi
+
+if [ `whoami` != root ]; then
+    printf "%s" "Must be run as root. aborting."
+    exit 1
+fi
 
 # day of week: 1-7, monday = 1
 DOW=$(date +%u)
