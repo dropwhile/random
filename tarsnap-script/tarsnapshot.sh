@@ -55,14 +55,14 @@ TIME=$(date +%H%M%S)
 
 # Backup name
 if [ X"${DOM}" = X"${MONTHLY_DAY}" ]; then
-	# monthly backup
-	BACKUP="${HOSTNAME}-${YEAR}${MOY}${DOM}-${TIME}-monthly"
+    # monthly backup
+    BACKUP="${HOSTNAME}-${YEAR}${MOY}${DOM}-${TIME}-monthly"
 elif [ X"$DOW" = X"$WEEKLY_DAY" ]; then
-	# weekly backup
-	BACKUP="${HOSTNAME}-${YEAR}${MOY}${DOM}-${TIME}-weekly"
+    # weekly backup
+    BACKUP="${HOSTNAME}-${YEAR}${MOY}${DOM}-${TIME}-weekly"
 else
-	# daily backup
-	BACKUP="${HOSTNAME}-${YEAR}${MOY}${DOM}-${TIME}-daily"
+    # daily backup
+    BACKUP="${HOSTNAME}-${YEAR}${MOY}${DOM}-${TIME}-daily"
 fi
 
 printf "%s\n" "==> creating $BACKUP"
@@ -102,8 +102,8 @@ for i in $(grep -E "^${HOSTNAME}-[[:digit:]]{8}-[[:digit:]]{6}-monthly$" $TMPFIL
 done
 
 if [ X"$DELARCHIVES" != X ]; then
-	printf "%s\n" "==> delete $DELARCHIVES"
-	$TARSNAP -d $DELARCHIVES
+    printf "%s\n" "==> delete $DELARCHIVES"
+    $TARSNAP -d $DELARCHIVES
 fi
 
 rm -f $TMPFILE
