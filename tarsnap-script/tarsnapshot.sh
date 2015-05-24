@@ -33,12 +33,12 @@ TARSNAP="/usr/local/bin/tarsnap"
 
 ## check for root
 if [ "$(id -u)" -ne 0 ]; then
-    printf "%s\n" "Please run as root"
+    printf "%s\n" "Please run as root" >&2
     exit
 fi
 
 if [ `whoami` != root ]; then
-    printf "%s" "Must be run as root. aborting."
+    printf "%s" "Must be run as root. aborting." >&2
     exit 1
 fi
 
@@ -70,7 +70,7 @@ $TARSNAP $EXTRA_FLAGS -cvf $BACKUP -T $TARSNAPFILES
 
 EX=$?
 if [ $EX -ne 0 ]; then
-    printf "%s\n" "==> Error creating backup"
+    printf "%s\n" "==> Error creating backup" >&2
     exit $EX
 fi
 
