@@ -6,7 +6,7 @@
 # Modified by Eli Janssne, 2015.
 
 HOSTNAME="$(hostname -s)"
-EXTRA_FLAGS=
+EXTRA_FLAGS="$*"
 
 # Directories to backup
 TARSNAPFILES="/usr/local/etc/tarsnapfiles"
