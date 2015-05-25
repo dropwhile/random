@@ -62,17 +62,17 @@ TIME=$(date +%H%M%S)
 # Backup name
 if [ X"${DOM}" = X"${MONTHLY_DAY}" ]; then
     # monthly backup
-    BACKUP="${HOSTNAME}-${YEAR}${MOY}${DOM}-${TIME}-${SUFFIX}-monthly"
+    BACKUP="${HOSTNAME}-${SUFFIX}-${YEAR}${MOY}${DOM}-${TIME}-monthly"
 elif [ X"$DOW" = X"$WEEKLY_DAY" ]; then
     # weekly backup
-    BACKUP="${HOSTNAME}-${YEAR}${MOY}${DOM}-${TIME}-${SUFFIX}-weekly"
+    BACKUP="${HOSTNAME}-${SUFFIX}-${YEAR}${MOY}${DOM}-${TIME}-weekly"
 else
     # daily backup
-    BACKUP="${HOSTNAME}-${YEAR}${MOY}${DOM}-${TIME}-${SUFFIX}-daily"
+    BACKUP="${HOSTNAME}-${SUFFIX}-${YEAR}${MOY}${DOM}-${TIME}-daily"
 fi
 
 printf "%s\n" "==> creating $BACKUP"
-$TARSNAP $EXTRA_FLAGS -cvf $BACKUP -T $TARSNAPFILE
+$TARSNAP $EXTRA_FLAGS -cf $BACKUP -T $TARSNAPFILE
 
 EX=$?
 if [ $EX -ne 0 ]; then
@@ -94,15 +94,15 @@ TMPFILE=$(mktemp /tmp/tarsnapshot.XXXXXX.tmp)
 $TARSNAP --list-archives | grep -E "^${HOSTNAME}-" > $TMPFILE
 
 DELARCHIVES=""
-for i in $(grep -E "^${HOSTNAME}-[[:digit:]]{8}-[[:digit:]]{6}-${SUFFIX}-daily$" $TMPFILE | sort -rn | tail -n +${DAILY}); do
+for i in $(grep -E "^${HOSTNAME}-${SUFFIX}-[[:digit:]]{8}-[[:digit:]]{6}-daily$" $TMPFILE | sort -rn | tail -n +${DAILY}); do
     printf "%s\n" "==> delete $i"
     DELARCHIVES="$DELARCHIVES -f $i"
 done
-for i in $(grep -E "^${HOSTNAME}-[[:digit:]]{8}-[[:digit:]]{6}-${SUFFIX}-weekly$" $TMPFILE | sort -rn | tail -n +${WEEKLY}); do
+for i in $(grep -E "^${HOSTNAME}-${SUFFIX}-[[:digit:]]{8}-[[:digit:]]{6}-weekly$" $TMPFILE | sort -rn | tail -n +${WEEKLY}); do
     printf "%s\n" "==> delete $i"
     DELARCHIVES="$DELARCHIVES -f $i"
 done
-for i in $(grep -E "^${HOSTNAME}-[[:digit:]]{8}-[[:digit:]]{6}-${SUFFIX}-monthly$" $TMPFILE | sort -rn | tail -n +${MONTHLY}); do
+for i in $(grep -E "^${HOSTNAME}-${SUFFIX}-[[:digit:]]{8}-[[:digit:]]{6}-monthly$" $TMPFILE | sort -rn | tail -n +${MONTHLY}); do
     printf "%s\n" "==> delete $i"
     DELARCHIVES="$DELARCHIVES -f $i"
 done
