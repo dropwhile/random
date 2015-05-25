@@ -6,10 +6,16 @@
 # Modified by Eli Janssne, 2015.
 
 HOSTNAME="$(hostname -s)"
-EXTRA_FLAGS="$*"
 
 # Directories to backup
-TARSNAPFILES="/usr/local/etc/tarsnapfiles"
+TARSNAPFILE="/usr/local/etc/tarsnapfiles/${1}"
+SUFFIX="${1}"
+
+if [ ! -f "$TARSNAPFILE" ]; then
+    printf "%s\n" "$TARSNAPFILE does not exist" >&2
+    exit 1
+fi
+
 
 # Number of daily backups to keep
 DAILY=7
@@ -56,17 +62,17 @@ TIME=$(date +%H%M%S)
 # Backup name
 if [ X"${DOM}" = X"${MONTHLY_DAY}" ]; then
     # monthly backup
-    BACKUP="${HOSTNAME}-${YEAR}${MOY}${DOM}-${TIME}-monthly"
+    BACKUP="${HOSTNAME}-${YEAR}${MOY}${DOM}-${TIME}-${SUFFIX}-monthly"
 elif [ X"$DOW" = X"$WEEKLY_DAY" ]; then
     # weekly backup
-    BACKUP="${HOSTNAME}-${YEAR}${MOY}${DOM}-${TIME}-weekly"
+    BACKUP="${HOSTNAME}-${YEAR}${MOY}${DOM}-${TIME}-${SUFFIX}-weekly"
 else
     # daily backup
-    BACKUP="${HOSTNAME}-${YEAR}${MOY}${DOM}-${TIME}-daily"
+    BACKUP="${HOSTNAME}-${YEAR}${MOY}${DOM}-${TIME}-${SUFFIX}-daily"
 fi
 
 printf "%s\n" "==> creating $BACKUP"
-$TARSNAP $EXTRA_FLAGS -cvf $BACKUP -T $TARSNAPFILES
+$TARSNAP $EXTRA_FLAGS -cvf $BACKUP -T $TARSNAPFILE
 
 EX=$?
 if [ $EX -ne 0 ]; then
@@ -88,15 +94,15 @@ TMPFILE=$(mktemp /tmp/tarsnapshot.XXXXXX.tmp)
 $TARSNAP --list-archives | grep -E "^${HOSTNAME}-" > $TMPFILE
 
 DELARCHIVES=""
-for i in $(grep -E "^${HOSTNAME}-[[:digit:]]{8}-[[:digit:]]{6}-daily$" $TMPFILE | sort -rn | tail -n +${DAILY}); do
+for i in $(grep -E "^${HOSTNAME}-[[:digit:]]{8}-[[:digit:]]{6}-${SUFFIX}-daily$" $TMPFILE | sort -rn | tail -n +${DAILY}); do
     printf "%s\n" "==> delete $i"
     DELARCHIVES="$DELARCHIVES -f $i"
 done
-for i in $(grep -E "^${HOSTNAME}-[[:digit:]]{8}-[[:digit:]]{6}-weekly$" $TMPFILE | sort -rn | tail -n +${WEEKLY}); do
+for i in $(grep -E "^${HOSTNAME}-[[:digit:]]{8}-[[:digit:]]{6}-${SUFFIX}-weekly$" $TMPFILE | sort -rn | tail -n +${WEEKLY}); do
     printf "%s\n" "==> delete $i"
     DELARCHIVES="$DELARCHIVES -f $i"
 done
-for i in $(grep -E "^${HOSTNAME}-[[:digit:]]{8}-[[:digit:]]{6}-monthly$" $TMPFILE | sort -rn | tail -n +${MONTHLY}); do
+for i in $(grep -E "^${HOSTNAME}-[[:digit:]]{8}-[[:digit:]]{6}-${SUFFIX}-monthly$" $TMPFILE | sort -rn | tail -n +${MONTHLY}); do
     printf "%s\n" "==> delete $i"
     DELARCHIVES="$DELARCHIVES -f $i"
 done
