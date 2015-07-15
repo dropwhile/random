@@ -1,3 +1,0 @@
-Example clients for [aurjson](http://aur.archlinux.org/rpc.php) interface.
-
-See also: [aurjson at wiki.archlinux.org](http://wiki.archlinux.org/index.php/AurJson)
