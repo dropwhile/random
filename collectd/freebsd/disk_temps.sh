@@ -2,6 +2,8 @@
 
 HOSTNAME="${COLLECTD_HOSTNAME:-localhost}"
 INTERVAL="${COLLECTD_INTERVAL:-10}"
+## note: this binary needs to be suid to avoid
+## junking up things with crazy sudo mess.
 DISK_TEMPS="/usr/local/share/collectd/disk_temps"
 
 while true; do
