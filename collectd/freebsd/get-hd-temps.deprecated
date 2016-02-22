@@ -1,0 +1,23 @@
+#!/bin/sh
+
+# DEPRECATED! see disk_temps.sh/disk_temps.go instead
+
+## requires sudo junk
+# Cmnd_Alias GET_HD_TEMPS = /usr/local/share/collectd/get-hd-temps
+# Defaults!GET_HD_TEMPS !syslog
+# collectd_user ALL=(root) NOPASSWD: GET_HD_TEMPS
+##
+
+[ "root" != "$USER" ] && exec /usr/local/bin/sudo -n -- $0 "$@"
+
+for disk in /dev/ada[0-8]; do
+  DNAME=$(basename "$disk")
+  TEMP=$(/usr/local/sbin/smartctl -A $disk | grep -F Temperature | awk '{print $10}')
+  printf "%s %s\n" "$DNAME" "${TEMP:-0}"
+done
+
+for disk in /dev/nvme[0-8]; do
+  DNAME=$(basename "$disk")
+  TEMP=$(/sbin/nvmecontrol logpage -p 2  nvme0|grep -E '^Temperature' | awk '{print $4}')
+  printf "%s %s\n" "$DNAME" "${TEMP:-0}"
+done
