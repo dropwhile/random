@@ -3,7 +3,7 @@
 # Tarsnap backup script
 # Original Written by Tim Bishop, 2009.
 #  http://www.bishnet.net/tim/tarsnap/run.sh
-# Modified by Eli Janssne, 2015.
+# Modified by Eli Janssen, 2015.
 
 HOSTNAME="$(hostname -s)"
 
