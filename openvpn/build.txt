@@ -1,0 +1,2 @@
+go get golang.org/x/crypto/bcrypt
+GOOS=freebsd go build -ldflags="-s -w" auth-bcrypt-file.go
