@@ -22,8 +22,8 @@ func main() {
 	flag.Parse()
 
 	args := flag.Args()
-	if len(args) < 1 {
-		fmt.Println("Input file is missing")
+	if len(args) < 2 {
+		fmt.Println("Input files are missing")
 		os.Exit(1)
 	}
 
@@ -42,11 +42,26 @@ func main() {
 		}
 	}
 	if err := scanner.Err(); err != nil {
-		fmt.Fprintln(os.Stderr, "reading standard input:", err)
+		fmt.Fprintln(os.Stderr, "Error reading file", err)
 	}
 
-	username := os.Getenv("username")
-	password := os.Getenv("password")
+	file2, err := os.Open(args[1])
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer file2.Close()
+
+	lines := make([]string, 0)
+	scanner = bufio.NewScanner(file2)
+	for scanner.Scan() {
+		lines = append(lines, scanner.Text())
+	}
+	if err := scanner.Err(); err != nil {
+		fmt.Fprintln(os.Stderr, "Error reading file", err)
+	}
+
+	username := lines[0]
+	password := lines[1]
 	pw, ok := creds[username]
 	if !ok {
 		// no user found, so set passwd and hashpw to something that will
