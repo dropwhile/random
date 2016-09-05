@@ -6,3 +6,4 @@
 ## usage
 
     auth-user-pass-verify "/sbin/auth-bcrypt-file /etc/openvpn.creds" via-file
+    script-security 2
