@@ -42,10 +42,10 @@ safe_create_file() {
 }
 
 
-if [ "$(id -u)" -ne 0 ] || [ "$(whoami)" != "root" ]; then
-    printf "Must be run as root. aborting.\n"
-    exit 1
-fi
+# if [ "$(id -u)" -ne 0 ] || [ "$(whoami)" != "root" ]; then
+#     printf "Must be run as root. aborting.\n"
+#     exit 1
+# fi
 
 umask 177
 OLDIP="$(get_cached_ip)"
